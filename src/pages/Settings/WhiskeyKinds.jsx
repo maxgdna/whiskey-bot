@@ -1,16 +1,5 @@
-import { useState } from 'react'
-
 function WhiskeyKinds() {
-  const [whiskeyKinds, setWhiskeyKinds] = useState([
-    { id: 1, typeName: 'Bourbon', rowNumber: 1 },
-    { id: 2, typeName: 'Corn', rowNumber: 2 },
-    { id: 3, typeName: 'Rye', rowNumber: 3 },
-    { id: 4, typeName: 'Light', rowNumber: 4 },
-    { id: 5, typeName: 'Wheat', rowNumber: 5 },
-    { id: 6, typeName: '', rowNumber: 6 },
-    { id: 7, typeName: '', rowNumber: 7 },
-    { id: 8, typeName: '', rowNumber: 8 },
-  ])
+  const totalItems = 0 // No data initially
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -30,29 +19,16 @@ function WhiskeyKinds() {
               </tr>
             </thead>
             <tbody className="bg-primary-light divide-y divide-accent-blue">
-              {whiskeyKinds.map((item) => (
-                <tr key={item.id} className="hover:bg-primary-DEFAULT transition-colors">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.typeName || ''}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                    <div className="flex items-center justify-between">
-                      <span>{item.rowNumber}</span>
-                      {item.rowNumber >= 5 && (
-                        <div className="flex space-x-2">
-                          <button className="text-accent-gold hover:text-accent-gold-light transition-colors">
-                            Edit
-                          </button>
-                          <span className="text-gray-500">|</span>
-                          <button className="text-accent-gold hover:text-accent-gold-light transition-colors">
-                            Details
-                          </button>
-                        </div>
-                      )}
-                    </div>
+              {totalItems === 0 ? (
+                <tr>
+                  <td colSpan="2" className="px-6 py-4 text-center text-gray-400">
+                    No data available
                   </td>
                 </tr>
-              ))}
+              ) : (
+                // Render data rows here when available
+                <tr></tr>
+              )}
             </tbody>
           </table>
         </div>

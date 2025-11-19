@@ -1,28 +1,5 @@
-import { useState } from 'react'
-
 function BaseTaxRates() {
-  const [taxRates, setTaxRates] = useState([
-    {
-      id: 1,
-      startDate: '01-01-1991',
-      rate1: '$13.5000',
-      rate1Ceiling: '0.00',
-      rate2: '$13.5000',
-      rate2Ceiling: '0.00',
-      rate3: '$13.5000',
-      pfCeiling: '200.00',
-    },
-    {
-      id: 2,
-      startDate: '01-01-2018',
-      rate1: '$2.7000',
-      rate1Ceiling: '100,000.00',
-      rate2: '$13.3400',
-      rate2Ceiling: '22,230,000.00',
-      rate3: '$13.5000',
-      pfCeiling: '200.00',
-    },
-  ])
+  const totalItems = 0 // No data initially
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -90,31 +67,16 @@ function BaseTaxRates() {
               </tr>
             </thead>
             <tbody className="bg-primary-light divide-y divide-accent-blue">
-              {taxRates.map((item) => (
-                <tr key={item.id} className="hover:bg-primary-DEFAULT transition-colors">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.startDate}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.rate1}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.rate1Ceiling}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.rate2}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.rate2Ceiling}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.rate3}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.pfCeiling}
+              {totalItems === 0 ? (
+                <tr>
+                  <td colSpan="7" className="px-6 py-4 text-center text-gray-400">
+                    No data available
                   </td>
                 </tr>
-              ))}
+              ) : (
+                // Render data rows here when available
+                <tr></tr>
+              )}
             </tbody>
           </table>
         </div>

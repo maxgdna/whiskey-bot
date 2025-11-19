@@ -3,43 +3,8 @@ import { useState } from 'react'
 function SettingsRawMaterials() {
   const [itemsPerPage, setItemsPerPage] = useState(50)
   const [currentPage, setCurrentPage] = useState(1)
-  
-  const [rawMaterials] = useState([
-    { id: 1, name: '375 ml bottle white', hide: false, description: 'White Bottle', unit: 'Ea', materialClass: 'Packaging', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 2, name: '750 ml bottle White', hide: false, description: 'White Bottle', unit: 'Ea', materialClass: 'Packaging', ttbMaterial: 'NA', vend: 'Defau' },
-    { id: 3, name: 'Angelica Root', hide: false, description: 'Botanical', unit: 'g', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 4, name: 'Anise Seed', hide: false, description: 'Botanical', unit: 'g', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 5, name: 'Blue Agave', hide: false, description: 'Blue Agave', unit: 'Lbs', materialClass: 'Fermentable', ttbMaterial: 'Blue Agave', vend: 'Interr' },
-    { id: 6, name: 'Caramel Coloring', hide: false, description: '', unit: 'Lbs', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 7, name: 'Carbon Dioxide for Carbonation (lbs)', hide: false, description: '', unit: 'Lbs', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 8, name: 'Chocolate Extract', hide: false, description: '', unit: 'Lbs', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 9, name: 'Cinnamon Chips', hide: false, description: 'Botanical', unit: 'Lbs', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'Defau' },
-    { id: 10, name: 'Cold Brew Coffee', hide: false, description: '', unit: 'Lbs', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 11, name: 'Coriander', hide: false, description: 'Botanical', unit: 'g', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 12, name: 'Corn', hide: false, description: 'Yellow Field Corn #2', unit: 'Lbs', materialClass: 'Fermentable', ttbMaterial: 'Corn', vend: 'Defau' },
-    { id: 13, name: 'Danko Rye', hide: false, description: 'Pennsylvania Rye', unit: 'Lbs', materialClass: 'Fermentable', ttbMaterial: 'Rye', vend: 'NA' },
-    { id: 14, name: 'Distillers Malt', hide: false, description: 'Distillers Malt', unit: 'Lbs', materialClass: 'Fermentable', ttbMaterial: 'Malt', vend: 'NA' },
-    { id: 15, name: 'Enzyme', hide: false, description: 'Seb-Star', unit: 'mL', materialClass: 'Fermentation_S...', ttbMaterial: 'NA', vend: 'Defau' },
-    { id: 16, name: 'Enzyme', hide: false, description: 'Seb-Amal', unit: 'mL', materialClass: 'Fermentation_S...', ttbMaterial: 'NA', vend: 'Defau' },
-    { id: 17, name: 'Fennel', hide: false, description: 'Fennel', unit: 'g', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 18, name: 'Ginger Root', hide: false, description: 'Botanical', unit: 'Lbs', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'Defau' },
-    { id: 19, name: 'Hyssop', hide: false, description: 'Hyssop', unit: 'g', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 20, name: 'Italian Juniper', hide: false, description: 'Botanical', unit: 'Lbs', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 21, name: 'Lemon Balm', hide: false, description: 'Lemon Balm', unit: 'g', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 22, name: 'Lime Peel', hide: false, description: 'Botanical', unit: 'Lbs', materialClass: 'Blending Ingred...', ttbMaterial: 'NA', vend: 'NA' },
-    { id: 23, name: 'Molasses', hide: false, description: '', unit: 'Gal', materialClass: 'Fermentable', ttbMaterial: 'Molasses', vend: 'NA' },
-    { id: 24, name: 'New 30 G', hide: false, description: '', unit: 'Ea', materialClass: 'Barrel', ttbMaterial: 'NA', vend: 'Defau' },
-    { id: 25, name: 'New 53 #3 char Barrel', hide: false, description: 'New 53 gallon #3 char barrel', unit: 'Ea', materialClass: 'Barrel', ttbMaterial: 'NA', vend: 'Indep' },
-    { id: 26, name: 'New 53 #4 char Barrel', hide: false, description: 'New 53 gallon #4 char barrel', unit: 'Ea', materialClass: 'Barrel', ttbMaterial: 'NA', vend: 'Indep' },
-    { id: 27, name: 'New 53 G', hide: false, description: '', unit: 'Ea', materialClass: 'Barrel', ttbMaterial: 'NA', vend: 'Defau' },
-    { id: 28, name: 'Ocean Spray Diet Cran', hide: false, description: '', unit: '', materialClass: '', ttbMaterial: '', vend: '' },
-  ])
-
-  const totalItems = rawMaterials.length
+  const totalItems = 0 // No data initially
   const totalPages = Math.ceil(totalItems / itemsPerPage)
-  const startIndex = (currentPage - 1) * itemsPerPage
-  const endIndex = startIndex + itemsPerPage
-  const currentItems = rawMaterials.slice(startIndex, endIndex)
 
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
@@ -142,46 +107,16 @@ function SettingsRawMaterials() {
               </tr>
             </thead>
             <tbody className="bg-primary-light divide-y divide-accent-blue">
-              {currentItems.map((item) => (
-                <tr key={item.id} className="hover:bg-primary-DEFAULT transition-colors">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                    <div className="flex space-x-2">
-                      <button className="text-accent-gold hover:text-accent-gold-light transition-colors">
-                        Edit
-                      </button>
-                      <span className="text-gray-500">|</span>
-                      <button className="text-accent-gold hover:text-accent-gold-light transition-colors">
-                        BOM Materials
-                      </button>
-                      <span className="text-gray-500">|</span>
-                      <button className="text-accent-gold hover:text-accent-gold-light transition-colors">
-                        Delete
-                      </button>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.name}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.hide ? 'true' : 'false'}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.description || ''}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.unit || ''}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.materialClass || ''}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.ttbMaterial || ''}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {item.vend || ''}
+              {totalItems === 0 ? (
+                <tr>
+                  <td colSpan="8" className="px-6 py-4 text-center text-gray-400">
+                    No items to display
                   </td>
                 </tr>
-              ))}
+              ) : (
+                // Render data rows here when available
+                <tr></tr>
+              )}
             </tbody>
           </table>
         </div>
@@ -243,7 +178,7 @@ function SettingsRawMaterials() {
           </div>
 
           <div className="text-gray-300 mb-2 sm:mb-0">
-            {startIndex + 1} - {Math.min(endIndex, totalItems)} of {totalItems} items
+            {totalItems === 0 ? '0 - 0 of 0 items' : `${startIndex + 1} - ${Math.min(endIndex, totalItems)} of ${totalItems} items`}
           </div>
 
           <button className="px-3 py-1 rounded bg-accent-blue text-gray-300 hover:bg-accent-blue-light transition-colors duration-200">
